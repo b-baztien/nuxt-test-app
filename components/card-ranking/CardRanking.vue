@@ -13,7 +13,7 @@ defineProps({
     required: true,
   },
   cardType: {
-    type: "circle" | "square",
+    type: String,
     required: true,
     default: "circle",
   },
@@ -34,21 +34,26 @@ defineProps({
             {{ title }}
           </h2>
         </div>
-        <div class="mt-[5rem] flex w-full items-center justify-center p-4">
+        <div
+          class="mt-[5rem] flex w-full items-center justify-center gap-x-2 p-4"
+        >
           <CardRankingB
             v-if="products?.[1]"
             :imagePath="products?.[1].imagePath"
             :title="products?.[1].title"
+            :cardType="cardType"
           />
           <CardRankingA
             v-if="products?.[0]"
             :imagePath="products?.[0].imagePath"
             :title="products?.[0].title"
+            :cardType="cardType"
           />
           <CardRankingC
             v-if="products?.[2]"
             :imagePath="products?.[2].imagePath"
             :title="products?.[2].title"
+            :cardType="cardType"
           />
         </div>
       </div>

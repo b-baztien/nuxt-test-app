@@ -6,6 +6,10 @@ defineProps({
   title: {
     type: String,
   },
+  cardType: {
+    type: String,
+    default: "circle",
+  },
 });
 </script>
 
@@ -14,7 +18,11 @@ defineProps({
     <div class="flex flex-col items-center w-full z-50 justify-end">
       <div class="flex flex-col gap-y-3">
         <div
-          class="mt-4 rounded-full border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 md:h-32 border-[#f9a159]"
+          :class="`mt-4 ${
+            cardType === 'square' ? 'rounded-md' : 'rounded-full'
+          } border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 md:h-${
+            cardType === 'square' ? '36' : '32'
+          } border-[#f9a159]`"
           :style="`background-image: url('${imagePath}')`"
         ></div>
         <div class="mt-4 flex w-full items-center justify-center">

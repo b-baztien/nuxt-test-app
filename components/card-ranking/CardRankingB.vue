@@ -6,14 +6,22 @@ defineProps({
   title: {
     type: String,
   },
+  cardType: {
+    type: String,
+    default: "circle",
+  },
 });
 </script>
 
 <template>
-  <div class="flex flex-col items-center w-full z-50 justify-center">
+  <div class="flex flex-col items-center z-50 justify-center">
     <div class="flex flex-col gap-y-3">
       <div
-        class="mt-4 rounded-full border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 md:h-32 border-[#cecee9]"
+        :class="`mt-4 ${
+          cardType === 'square' ? 'rounded-md' : 'rounded-full'
+        } border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 md:h-${
+          cardType === 'square' ? '36' : '32'
+        } border-[#cecee9]`"
         :style="`background-image: url('${imagePath}')`"
       ></div>
       <div class="mt-4 flex w-full items-center justify-center">

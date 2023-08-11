@@ -57,6 +57,13 @@ const { data: products } = await useFetch("/api/product");
               title="เกมที่มียอดเติมเงินยอดนิยม"
               :products="products"
               link="#"
+              cardType="circle"
+            />
+            <CardRanking
+              title="บัตรเติมเงินยอดนิยม"
+              :products="products"
+              link="#"
+              cardType="square"
             />
           </div>
         </div>

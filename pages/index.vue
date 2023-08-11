@@ -144,6 +144,19 @@ const { data: products } = await useFetch("/api/product");
         </div>
         <div class="flex w-full flex-col gap-y-3">
           <HighlightTitle title="โปรโมชั่น" link="#" />
+          <div
+            class="grid grid-cols-2 gap-3 overflow-hidden rounded-xl py-6 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 lg:divide-y-0 xl:grid-cols-3"
+          >
+            <CardPromotion
+              v-for="product in products?.slice(0, 3)"
+              :title="product.title"
+              :image-path="product.imagePath"
+              :link="product.link"
+              :date="'11/08/2023'"
+              :description="'บริการเติมเกมออนไลน์ทั้งเกมมือถือและเกมคอมพิวเตอร์ มีส่วนลดที่สุดในไทย'"
+              :author="'Administator'"
+            />
+          </div>
         </div>
       </div>
     </div>

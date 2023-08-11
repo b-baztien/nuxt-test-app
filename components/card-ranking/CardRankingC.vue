@@ -20,8 +20,8 @@ defineProps({
         <div
           :class="`mt-4 ${
             cardType === 'square' ? 'rounded-md' : 'rounded-full'
-          } border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 md:h-${
-            cardType === 'square' ? '36' : '32'
+          } border-[4px] md:border-[7px] bg-cover bg-center bg-no-repeat w-16 h-16 md:w-32 ${
+            cardType === 'square' ? 'md:h-36' : 'md:h-32'
           } border-[#f9a159]`"
           :style="`background-image: url('${imagePath}')`"
         ></div>
